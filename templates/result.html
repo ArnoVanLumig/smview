@@ -1,0 +1,55 @@
+% for trace in result:
+	% if trace[1]:
+		<h1 class="false">${trace[0]}</h1>
+	% else:
+		<h1 class="true">${trace[0]}</h1>
+	% endif
+
+	% if trace[1]:
+		<%
+			curNode = trace[1]
+			prevNode = None
+		%>
+		<table>
+			<tr class="head">
+				% for var in curNode.variables:
+				<td>${var[0]}</td>
+				% endfor
+			</tr>
+		</table>
+		<div class="arrow initial">
+			&nbsp;
+		</div>
+		% while curNode:
+			<table>
+				% if curNode.isloopstart:
+				<tr class="loopstart">
+				% else:
+				<tr>
+				% endif
+					% for idx, var in enumerate(curNode.variables):
+						% if prevNode and prevNode.variables[idx][1] == var[1]:
+							<td class="dim">${var[1]}</td>
+						% else:
+							<td>${var[1]}</td>
+						% endif
+					% endfor
+				</tr>
+			</table>
+
+			% if curNode.transition:
+				<div class="arrow">
+					${curNode.transition.process}
+				</div>
+				<%
+					prevNode = curNode
+					curNode = curNode.transition.nextNode
+				%>
+			% else:
+				<% curNode = None %>
+			% endif
+		% endwhile
+	% endif
+% endfor
+
+<span class="md5">${md5}</span>

@@ -1,0 +1,146 @@
+html{min-height:100%;position:relative}
+body {
+	font-family: sans-serif;
+		height: 100%;
+}
+div.CodeMirror {
+	border-right: 1px solid #aaa;
+	height: 100%;
+}
+.CodeMirror-scroll {
+	height: 100%;
+}
+.errorline
+{
+	background-color: #ffaaaa !important;
+}
+#left {
+	position: absolute;
+	top: 0;
+	bottom: 0;
+	left: 0;
+	width: 50%;
+	overflow: scroll;
+}
+#right {
+	position: absolute;
+	top: 0;
+	bottom: 0;
+	right: 0;
+	width: 50%;
+	overflow: scroll;
+}
+div.wrapper {
+	padding: 20px;
+}
+table {
+	border-collapse: collapse;
+	table-layout: fixed;
+	width: 100%;
+}
+td {
+	padding: 10px;
+}
+td.dim {
+	color: #999;
+}
+tr {
+	border: 1px solid black;
+}
+tr.loopstart {
+	border-top: 4px double black;
+}
+tr.head td {
+	font-weight: bold;
+	border: 0px solid black;
+	padding-bottom: 2px;
+}
+tr.head {
+	border: none;
+	border-bottom: 1px solid black;
+}
+div.arrow.initial {
+	border: 0px solid black;
+	padding-top: 0;
+}
+div.arrow {
+	position: relative;
+	padding: 20px;
+	padding-right: 5px;
+	width: 50%;
+	text-align: right;
+	border-right: 3px solid black;
+}
+div.arrow:after {
+	content: ' ';
+	height: 0;
+	position: absolute;
+	width: 0;
+
+	border: 10px solid transparent;
+	border-top-color: black;
+
+	top: 100%;
+	left: 100%;
+	margin-left: -8px;
+	margin-top: -7px;
+}
+#uploader {
+	position: fixed;
+	bottom: 20px;
+	left: 50px;
+	width: 300px;
+	height: 110px;
+	border: 1px solid #666;
+	border-radius: 3px;
+	z-index: 10;
+	background-color: #f2e6c4;
+	box-shadow: 0 0 5px #888888;
+	padding-top: 30px;
+}
+#uploader span {
+	font-size: 24px;
+	color: #333;
+	display: block;
+	width: 100%;
+	margin: 0 auto;
+	text-align: center;
+}
+#uploader span.small {
+	font-size: 10pt;
+	font-style: italic;
+}
+h1 {
+	font-family: monospace;
+	font-size: 16px;
+}
+h1.true {
+	color: green
+}
+h1.false {
+	color: red
+}
+.md5, span.errorLine {
+	display:none
+}
+span.cm-keywords {
+	color: #859900;
+}
+span.cm-types {
+	color: #d33682;
+}
+span.cm-predicates {
+	color: #00f;
+}
+span.cm-operators {
+	color: #2aa198;
+}
+span.cm-constants {
+	color: #dc322f;
+}
+div.CodeMirror span.CodeMirror-matchingbracket {
+	color: #F00;
+}
+div.CodeMirror span.CodeMirror-nonmatchingbracket {
+	color: #f22;
+}

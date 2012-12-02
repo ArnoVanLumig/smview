@@ -1,0 +1,5 @@
+.DS_Store
+code.db
+*.smv
+*.pyc
+*.txt
